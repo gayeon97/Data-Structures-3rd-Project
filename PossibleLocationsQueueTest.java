@@ -38,8 +38,7 @@ public class PossibleLocationsQueueTest {
 			Location place4 = new Location(-2,10);
 
 			PossibleLocationsQueue list = new PossibleLocationsQueue();
-			//check that nothing gets added to the list 
-			//when null is added to the list
+			//check that nothing gets added to the list when null is added to the list
 			list.add(null);
 			assertTrue(list.isEmpty());
 			
@@ -51,7 +50,6 @@ public class PossibleLocationsQueueTest {
 			//And add to the list again. 
 			list.add(place1);
 			assertEquals(place1, list.remove());
-
 			//empty the array
 			while(!list.isEmpty()){
 				list.remove();
@@ -69,12 +67,10 @@ public class PossibleLocationsQueueTest {
 			list.add(place3);
 			list.add(place1);
 			//Add 1 more than the original array size
-			//this should run with assumption that makeLarger private method 
-			//is implemented correctly 
+			//this should run with assumption that makeLarger private method is implemented correctly 
 			list.add(place1);
 
-			//remove to see if Location objects have been added correctly 
-			//in correct order
+			//remove to see if Location objects have been added correctly in correct order
 			assertEquals(place1,list.remove());
 			assertEquals(place,list.remove());
 			assertEquals(place3,list.remove());
@@ -93,8 +89,7 @@ public class PossibleLocationsQueueTest {
 
 	@Test
 	public void testAdd2(){
-		//Test adding to PossibleLocationsQueue object created 
-		//with constructor with parameter passed in
+		//Test adding to PossibleLocationsQueue object created with constructor with parameter passed in
 		try{
 			Location place = new Location(5,4);
 			Location place1 = new Location(7,3);
@@ -103,8 +98,7 @@ public class PossibleLocationsQueueTest {
 			Location place4 = new Location(-2,10);
 
 			PossibleLocationsQueue list = new PossibleLocationsQueue(4);
-			//check that nothing gets added to the list 
-			//when null is added to the list
+			//check that nothing gets added to the list when null is added to the list
 			list.add(null);
 			assertTrue(list.isEmpty());
 			
@@ -116,7 +110,6 @@ public class PossibleLocationsQueueTest {
 			//And add to the list again. 
 			list.add(place1);
 			assertEquals(place1, list.remove());
-
 			//empty the array
 			while(!list.isEmpty()){
 				list.remove();
@@ -128,8 +121,7 @@ public class PossibleLocationsQueueTest {
 			list.add(place3);
 			list.add(place2);
 			//Add 1 more than the original array size
-			//this should run with assumption that makeLarger method 
-			//is implemented correctly 
+			//this should run with assumption that makeLarger method is implemented correctly 
 			list.add(place4);
 
 			//remove to see if Location objects have been added correctly 
@@ -151,8 +143,7 @@ public class PossibleLocationsQueueTest {
 			PossibleLocationsQueue list = new PossibleLocationsQueue();
 
 			//try removing before anything's been added to array
-			//null value should be returned because nothing's been
-			//added to the list
+			//null value should be returned because nothing's been added to the list
 			assertNull(list.remove());
 
 			Location place = new Location(5,4);
@@ -161,12 +152,10 @@ public class PossibleLocationsQueueTest {
 			Location place3 = new Location(6,13);
 			Location place4 = new Location(-2,10);
 
-			//When adding one Location object to empty list,
-			//and then removing it, the Location object added should be returned
+			//When adding one Location object to empty list and then removing it, the Location object added should be returned
 			list.add(place);
 			assertEquals(place, list.remove());	
-			//if removing again from the list, null should be returned
-			//because the list has been emptied
+			//if removing again from the list, null should be returned because the list has been emptied
 			assertNull(list.remove());
 
 			//repopulate the array
@@ -181,8 +170,7 @@ public class PossibleLocationsQueueTest {
 			list.add(place3);
 			list.add(place1);
 			//Add 1 more than the capacity of the original array
-			//this should run with assumption that makeLarger method 
-			//is implemented correctly 
+			//this should run with assumption that makeLarger method is implemented correctly 
 			list.add(place1);
 
 			//remove and see if objects are removed in order
@@ -212,8 +200,7 @@ public class PossibleLocationsQueueTest {
 			PossibleLocationsQueue list = new PossibleLocationsQueue(3);
 
 			//try removing before anything's been added to array
-			//null value should be returned because nothing's been
-			//added to the list
+			//null value should be returned because nothing's been added to the list
 			assertNull(list.remove());
 
 			Location place = new Location(5,4);
@@ -222,12 +209,10 @@ public class PossibleLocationsQueueTest {
 			Location place3 = new Location(6,13);
 			Location place4 = new Location(-2,10);
 
-			//When adding one Location object to empty list,
-			//and then removing it, the Location object added should be returned
+			//When adding one Location object to empty list and then removing it, the added Location object should be returned
 			list.add(place);
 			assertEquals(place, list.remove());	
-			//if removing again from the list, null should be returned
-			//because the list has been emptied
+			//if removing again from the list, null should be returned because the list has been emptied
 			assertNull(list.remove());
 
 			//repopulate the array
@@ -235,8 +220,7 @@ public class PossibleLocationsQueueTest {
 			list.add(place2);
 			list.add(place4);
 			//Add more than the capacity of the original array
-			//this should run with assumption that makeLarger method 
-			//is implemented correctly 
+			//this should run with assumption that makeLarger method is implemented correctly 
 			list.add(place4);
 			list.add(place2);
 			list.add(place);
