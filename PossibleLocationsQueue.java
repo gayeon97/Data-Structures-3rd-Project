@@ -17,9 +17,6 @@ public class PossibleLocationsQueue implements PossibleLocations{
 	private int front = 0;
 	private int back = 0;
 	private int size = 0;
-//	private int front;
-//	private int back;
-//	private int size;
 
 	/**
 	 * A default constructor that creates an empty array 
@@ -28,9 +25,6 @@ public class PossibleLocationsQueue implements PossibleLocations{
 	public PossibleLocationsQueue(){
 		capacity = 10;
 		list = new Location[capacity];
-//		front = 0;
-//		back = capacity - 1;
-//		size = 0;
 	}
 	
 	/**
@@ -41,15 +35,11 @@ public class PossibleLocationsQueue implements PossibleLocations{
 	 */
 	public PossibleLocationsQueue(int size){
 		capacity = size;
-		//set the size to the size of default constructor 
-		//if parameter is equal to or less than 0
+		//set the size to the size of default constructor if parameter is equal to or less than 0
 		if (size <= 0){
 			capacity = 10;
 		}
 		list = new Location[capacity];
-//		front = 0;
-//		back = capacity - 1;
-//		size = 0;
 	}
 	
 	/**
@@ -67,19 +57,12 @@ public class PossibleLocationsQueue implements PossibleLocations{
 			list[back] = s;
 			size ++;
 		} else{
-			//new array is created and set to list
-			//because the original array is completely filled
+			//new array is created and set to list because the original array is completely filled
 			list = makeLarger();
 			//add Location object to the end of the newly created array
 			list[++back] = s; 
 			size ++;
 		}
-//		if (size == capacity) makeLarger();
-//		else{
-//			back = (back + 1) % capacity;
-//			list[back] = s;
-//			size ++;
-//		}
 	}
 	
 	/**
@@ -93,8 +76,7 @@ public class PossibleLocationsQueue implements PossibleLocations{
 	private Location[] makeLarger(){
 		//creates a new array that's twice in size of the original array
 		Location[] newList = new Location[capacity*2];
-		//copy over all the elements in the original array
-		//in correct order to the new array
+		//copy over all the elements in the original array in correct order to the new array
 		for (int i = 0; i < size; i ++){
 			newList[i] = list[(front+i) % capacity];
 		}
@@ -121,7 +103,6 @@ public class PossibleLocationsQueue implements PossibleLocations{
 		front = (front+1) % capacity;
 		size --;
 		return temp;
-
 	}
 
 	/**
