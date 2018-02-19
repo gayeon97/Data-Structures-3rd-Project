@@ -10,8 +10,7 @@ public class PossibleLocationsStackTest {
 	public void testPossibleLocationsStackConstructor() {
 		//Test creating PossibleLocationsStack object
 		try{
-			//Test default constructor, which is the only constructor of 
-			//PossibleLocationsStack class
+			//Test default constructor, which is the only constructor of PossibleLocationsStack class
 			PossibleLocationsStack list = new PossibleLocationsStack();
 		} catch (Exception e){
 			fail("The constructor is not implemented correctly. "
@@ -30,8 +29,7 @@ public class PossibleLocationsStackTest {
 			Location place4 = new Location(-2,10);
 
 			PossibleLocationsStack list = new PossibleLocationsStack();
-			//check that nothing gets added to the list 
-			//when null is added to the list
+			//Check that nothing gets added to the list when null is added to the list
 			list.add(null);
 			assertTrue(list.isEmpty());
 			
@@ -43,13 +41,12 @@ public class PossibleLocationsStackTest {
 			//And add to the list again. 
 			list.add(place1);
 			assertEquals(place1, list.remove());
-			
-			//empty the array
+			//Empty the array
 			while(!list.isEmpty()){
 				list.remove();
 			}
 			
-			//repopulate the array
+			//Repopulate the array
 			list.add(place1);
 			list.add(place);
 			list.add(place3);
@@ -61,8 +58,7 @@ public class PossibleLocationsStackTest {
 			list.add(place3);
 			list.add(place1);
 	
-			//remove to see if Location objects have been added correctly 
-			//in correct order
+			//Remove to see if Location objects have been added correctly in correct order
 			assertEquals(place1,list.remove());
 			assertEquals(place3,list.remove());
 			assertEquals(place,list.remove());
@@ -84,9 +80,8 @@ public class PossibleLocationsStackTest {
 		try{		
 			PossibleLocationsStack list = new PossibleLocationsStack();
 
-			//try removing before anything's been added to array
-			//null value should be returned because nothing's been
-			//added to the list
+			//Try removing before anything's been added to array
+			//null value should be returned because nothing's been added to the list
 			assertNull(list.remove());
 
 			Location place = new Location(5,4);
@@ -95,15 +90,13 @@ public class PossibleLocationsStackTest {
 			Location place3 = new Location(6,13);
 			Location place4 = new Location(-2,10);
 
-			//When adding one Location object to empty list,
-			//and then removing it, the Location object added should be returned
+			//When adding one Location object to empty list and then removing it, the added Location object should be returned
 			list.add(place);
 			assertEquals(place, list.remove());	
-			//if removing again from the list, null should be returned
-			//because the list has been emptied
+			//If removing again from the list, null should be returned because the list has been emptied
 			assertNull(list.remove());
 		
-			//repopulate the array
+			//Repopulate the array
 			list.add(place1);
 			list.add(place);
 			list.add(place3);
@@ -116,7 +109,7 @@ public class PossibleLocationsStackTest {
 			list.add(place1);
 			list.add(place1);
 	
-			//remove and see if objects are removed in order
+			//Remove and see if objects are removed in order
 			assertEquals(place1,list.remove());
 			assertEquals(place1,list.remove());
 			assertEquals(place3,list.remove());
@@ -128,7 +121,7 @@ public class PossibleLocationsStackTest {
 			assertEquals(place3,list.remove());
 			assertEquals(place,list.remove());
 			assertEquals(place1,list.remove());
-			//removing more than the elements stored
+			//Removing more than the elements stored
 			assertNull(null,list.remove());
 		} catch (Exception e){
 			fail("testRemove failed: Exception thrown \n" + e.getClass()+ "\n" + e.getMessage());
@@ -141,10 +134,10 @@ public class PossibleLocationsStackTest {
 			PossibleLocationsStack list = new PossibleLocationsStack();
 			Location place = new Location(1,1);
 
-			//checks if the list is empty
+			//Checks if the list is empty
 			assertTrue("The list is empty.", list.isEmpty());
 
-			//checks if the list is NOT empty
+			//Checks if the list is NOT empty
 			list.add(place);
 			assertFalse("The list is not empty.", list.isEmpty());
 		} catch (Exception e){
